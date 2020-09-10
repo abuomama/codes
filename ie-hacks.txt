@@ -1,0 +1,7 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   // Your custom CSS goes here
+}
+
+select::-ms-expand { display: none; }
+
+.landing-hero-container::before{opacity: 0.8; filter: alpha(opacity=80); zoom: 1;}
