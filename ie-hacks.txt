@@ -5,3 +5,29 @@
 select::-ms-expand { display: none; }
 
 .landing-hero-container::before{opacity: 0.8; filter: alpha(opacity=80); zoom: 1;}
+
+
+
+
+
+
+
+
+.latets-news-img,.news-img{background-size: cover; background-position: center;}
+.latets-news-img img,.news-img img{opacity: 0 !important;}
+/*==========================*/  
+/* for ie */ 
+/*==========================*/
+var userAgent, ieReg, ie;
+userAgent = window.navigator.userAgent;
+ieReg = /msie|Trident.*rv[ :]*11\./gi;
+ie = ieReg.test(userAgent);
+if(ie) {
+  $(".latest-news-img, .news-img").each(function () {
+    var $container = $(this),
+        imgUrl = $container.find("img").prop("src");
+    if (imgUrl) {
+      $container.css("backgroundImage", 'url(' + imgUrl + ')').addClass("custom-object-fit");
+    }
+  });
+}
