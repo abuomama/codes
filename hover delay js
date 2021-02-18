@@ -1,0 +1,10 @@
+var timer;
+$('.mega-menu > .dropdown-menu > li > a').on('mouseenter',function() {
+    var that = this;
+    timer = setTimeout(function(){
+        $('.mega-menu > .dropdown-menu > li').removeClass('active');
+        $(that).closest('li').addClass('active');
+    }, 200);
+}).mouseleave(function() {
+    clearTimeout(timer);
+});
